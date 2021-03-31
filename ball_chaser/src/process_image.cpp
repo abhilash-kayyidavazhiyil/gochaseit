@@ -41,11 +41,11 @@ void process_image_callback(const sensor_msgs::Image img)
             index = i % img.step;
  
             if (index < img.step/3)
-                drive_robot(0.5, 1);
+                drive_robot(0, 1);
             else if (index < (img.step/3 * 2))
-                robot(0.5, 0); 
+                drive_robot(0.5, 0); 
             else
-                robot(0.5, -1);
+                drive_robot(0, -1);
             ball_found = true;
             break;
          }
